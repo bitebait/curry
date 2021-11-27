@@ -1,12 +1,12 @@
 package main
 
 import (
-	"curry/api/db"
-	"curry/api/models"
-	"curry/api/routes"
-	"curry/config"
-	"curry/crawler"
 	"fmt"
+	"github.com/bitebait/curry/api/db"
+	"github.com/bitebait/curry/api/models"
+	"github.com/bitebait/curry/api/routes"
+	"github.com/bitebait/curry/config"
+	"github.com/bitebait/curry/crawler"
 	"log"
 	"net/http"
 	"sync"
