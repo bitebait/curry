@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"github.com/bitebait/curry/config"
+	"curry/config"
 	"log"
 	"regexp"
 	"strconv"

@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/bitebait/curry/api/models"
+	"curry/api/models"
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"

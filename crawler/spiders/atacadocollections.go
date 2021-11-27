@@ -1,8 +1,8 @@
 package spiders
 
 import (
-	"github.com/bitebait/curry/api/models"
-	"github.com/bitebait/curry/config"
+	"curry/api/models"
+	"curry/config"
 	"strings"
 
 	"github.com/gocolly/colly"

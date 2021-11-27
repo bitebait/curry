@@ -1,9 +1,9 @@
 package spiders
 
 import (
-	"github.com/bitebait/curry/api/models"
-	"github.com/bitebait/curry/config"
-	"github.com/bitebait/curry/utils"
+	"curry/api/models"
+	"curry/config"
+	"curry/utils"
 	"log"
 	"net/http"
 

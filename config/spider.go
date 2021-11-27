@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/bitebait/curry/api/models"
+	"curry/api/models"
 
 	"github.com/gocolly/colly"
 )

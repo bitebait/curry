@@ -1,4 +1,4 @@
-module github.com/bitebait/curry
+module curry
 
 go 1.16
 
