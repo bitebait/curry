@@ -1,0 +1,23 @@
+package spiders
+
+import (
+	"curry/api/models"
+	"curry/config"
+	"strings"
+
+	"github.com/gocolly/colly"
+)
+
+func ShoppingCentro(channel chan models.Store) {
+	spider := &config.Spider{}
+	spider.Name = "shoppingcentropioneer"
+	spider.Channel = channel
+	spider.Selector = "div.h-4:nth-child(1)"
+	spider.URL = "https://shoppingcentropioneer.com/"
+	spider.GetValue = func(e *colly.HTMLElement) string {
+		data := strings.TrimSpace(strings.ReplaceAll(e.Text, ".", ""))
+		return data
+	}
+
+	runSpider(spider)
+}

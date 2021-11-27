@@ -1,0 +1,19 @@
+app:
+  host: 127.0.0.1
+  port: '8000'
+
+api:
+  endpoint: /api
+
+db:
+  file_name: database.db
+
+cache:
+  maxage: 12  # MaxAge = 12 Hours
+
+currency:
+  symbol: BRL # Check https://github.com/joiggama/money/blob/v2.0.0/currencies.go
+  symbol_space: true # Save with space
+  show_currency: true # Save with currency
+
+
