@@ -33,7 +33,7 @@ type config struct {
 
 func GetConfig() *config {
 	var cfg config
-	if err := fig.Load(&cfg); err != nil {
+	if err := fig.Load(&cfg, fig.File("config.yml")); err != nil {
 		log.Panic(err)
 	}
 	return &cfg
