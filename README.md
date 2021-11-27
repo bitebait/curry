@@ -113,3 +113,7 @@ Todo o conteúdo apresentado nos sites pertence aos criadores originais.
 A licença abaixo se refere apenas ao script e não ao conteúdo scrapado.
 
 [Licença - MIT](https://github.com/bitebait/curry/blob/master/LICENSE)
+
+<br>
+
+### 🔥 Sinta-se à vontade para contribuir com o código (; 🔥
