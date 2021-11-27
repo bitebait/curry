@@ -25,9 +25,7 @@ type config struct {
 	}
 
 	Currency struct {
-		Symbol       string `fig:"symbol" default:"BRL"`
-		SymbolSpace  bool   `fig:"symbol_space"`
-		ShowCurrency bool   `fig:"show_currency"`
+		Currency string `fig:"symbol" default:"BRL"`
 	}
 }
 

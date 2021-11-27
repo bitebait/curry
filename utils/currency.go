@@ -1,16 +1,13 @@
 package utils
 
 import (
-	"github.com/bitebait/curry/config"
 	"log"
 	"regexp"
 	"strconv"
 	"strings"
-
-	"github.com/joiggama/money"
 )
 
-func FormatCurrency(s string) string {
+func FormatCurrency(s string) float32 {
 	reg, err := regexp.Compile(`[^\d_.]`)
 	if err != nil {
 		log.Fatal(err)
@@ -21,11 +18,5 @@ func FormatCurrency(s string) string {
 		log.Panic(e)
 	}
 
-	cfg := config.GetConfig()
-
-	return money.Format(cur, money.Options{
-		"currency":          cfg.Currency.Symbol,
-		"with_symbol_space": cfg.Currency.SymbolSpace,
-		"with_currency":     cfg.Currency.ShowCurrency,
-	})
+	return float32(cur)
 }

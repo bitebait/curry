@@ -38,11 +38,14 @@ func runSpider(spider *config.Spider) {
 		DisableKeepAlives: true,
 	})
 
+	cfg := config.GetConfig()
+
 	c.OnHTML(spider.Selector, func(e *colly.HTMLElement) {
 		store := &models.Store{
-			Name:  spider.Name,
-			Value: utils.FormatCurrency(spider.GetValue(e)),
-			URL:   spider.URL,
+			Name:     spider.Name,
+			Currency: cfg.Currency.Currency,
+			Value:    utils.FormatCurrency(spider.GetValue(e)),
+			URL:      spider.URL,
 		}
 		spider.Channel <- *store
 	})
