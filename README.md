@@ -34,10 +34,9 @@ Exemplo de saida do terminal:
 ██║     ██║   ██║██╔══██╗██╔══██╗  ╚██╔╝  
 ╚██████╗╚██████╔╝██║  ██║██║  ██║   ██║   
  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
-2021/11/27 01:59:09 Running and Listening on http://127.0.0.1:8000
-2021/11/27 01:59:09 API Endpoint: /api
-2021/11/27 01:59:10 Running crawler...
-
+2021/11/27 15:20:58 Running and Listening on :8000
+2021/11/27 15:20:58 API Endpoint: /api
+2021/11/27 15:20:59 Running crawler...
 ```
 
 Agora basta acessar http://127.0.0.1:8000/api. Caso tenha alterado o endpoint favor verifique o log de saida do terminal
@@ -52,21 +51,23 @@ ou o arquivo config.yml.
 ```json
 {
   "id": 1,
-  "createdAt": "2021-11-27T02:09:58.310052709-03:00",
-  "updateAt": "2021-11-27T02:09:58.310052709-03:00",
+  "createdAt": "2021-11-27T15:21:06.343499301-03:00",
+  "updateAt": "2021-11-27T15:21:06.343499301-03:00",
   "deletedAt": null,
   "items": [
     {
       "id": 1,
-      "name": "store1",
-      "value": "R$ 5,78 BRL",
-      "url": "https://www.store1.com.br/br"
+      "name": "example_store1",
+      "currency": "BRL",
+      "value": 5.7,
+      "url": "https://www.example_store1.com/"
     },
     {
       "id": 2,
-      "name": "store2",
-      "value": "R$ 5,76 BRL",
-      "url": "https://www.store2.com/home"
+      "name": "example_store2",
+      "currency": "BRL",
+      "value": 5.72,
+      "url": "https://www.example_store2.com/"
     }
   ]
 }
@@ -76,7 +77,7 @@ ou o arquivo config.yml.
 
 ```yaml
 app:
-  host: 127.0.0.1
+  host:
   port: '8000'
 
 api:
@@ -86,12 +87,10 @@ db:
   file_name: database.db
 
 cache:
-  maxage: 12  # Run crawler again after 12 hours
+  maxage: 12  # MaxAge = 12 Hours
 
 currency:
-  symbol: BRL # Check https://github.com/joiggama/money/blob/v2.0.0/currencies.go
-  symbol_space: true # true: R$ 5,78 | false:  R$5,78
-  show_currency: true # true: R$ 5,78 BRL | false: R$ 5,78
+  currency: BRL # Don't change
 ```
 
 **🕷️ Para mais informações sobre spiders disponíveis de uma olhada em
