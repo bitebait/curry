@@ -39,9 +39,9 @@ Exemplo de saida do terminal:
 ```
 
 Agora basta acessar http://127.0.0.1:8000/api. Caso tenha alterado o endpoint favor verifique o log de saida do terminal
-ou o arquivo config.yaml.
+ou o arquivo config.yml.
 
-⚠️️ **Não esqueça de configurar o arquivo *config.yaml* conforme as suas necessidades!** ⚠️
+⚠️️ **Não esqueça de configurar o arquivo *config.yml* conforme as suas necessidades!** ⚠️
 
 <br>
 
@@ -70,7 +70,7 @@ ou o arquivo config.yaml.
 }
 ```
 
-*config.yaml:*
+*config.yml:*
 
 ```yaml
 app:
