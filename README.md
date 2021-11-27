@@ -1,10 +1,12 @@
 # <div align="center">🍛 Curry - Câmbios 🍛</div>
+
 ## <div align="center">Valor do câmbio(USDxBRL) em lojas no Paraguay</div>
+
 <br>
 
 ## 🎓 Sobre
 
-Curry é um WebCrawler escrito em Golang com finalidade de verificar os valores de câmbio(USDxBRL) 
+Curry é um WebCrawler escrito em Golang com finalidade de verificar os valores de câmbio(USDxBRL)
 em algumas lojas no Paraguay.
 
 * * *
@@ -13,9 +15,7 @@ em algumas lojas no Paraguay.
 
 Para utilizar, basta seguir os passos abaixo:
 
-
 ### 📜 Rodando
-
 
 ```sh
 git clone https://github.com/bitebait/curry.git
@@ -38,14 +38,15 @@ Exemplo de saida do terminal:
 
 ```
 
-Agora basta acessar http://127.0.0.1:8000/api. 
-Caso tenha alterado o endpoint favor verifique o log de saida do terminal ou o arquivo config.yaml.
+Agora basta acessar http://127.0.0.1:8000/api. Caso tenha alterado o endpoint favor verifique o log de saida do terminal
+ou o arquivo config.yaml.
 
 ⚠️️ **Não esqueça de configurar o arquivo *config.yaml* conforme as suas necessidades!** ⚠️
 
 <br>
 
 *API Json Result:*
+
 ```json
 {
   "id": 1,
@@ -70,6 +71,7 @@ Caso tenha alterado o endpoint favor verifique o log de saida do terminal ou o a
 ```
 
 *config.yaml:*
+
 ```yaml
 app:
   host: 127.0.0.1
