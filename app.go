@@ -35,7 +35,7 @@ func initApi(wg *sync.WaitGroup) {
 		routes.Init()
 
 		fmt.Println(cfg.App.AsciiName)
-		log.Printf("Running and Listening on http://%s:%s\n", cfg.App.Host, cfg.App.Port)
+		log.Printf("Running and Listening on %s:%s\n", cfg.App.Host, cfg.App.Port)
 		log.Printf("API Endpoint: %s\n", cfg.Api.Endpoint)
 		log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", cfg.App.Host, cfg.App.Port), nil))
 	}()
