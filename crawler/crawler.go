@@ -1,8 +1,8 @@
 package crawler
 
 import (
-	"curry/api/models"
-	"curry/crawler/spiders"
+	"github.com/bitebait/curry/api/models"
+	"github.com/bitebait/curry/crawler/spiders"
 	"log"
 	"sync"
 )

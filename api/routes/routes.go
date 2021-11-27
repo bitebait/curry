@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"curry/api/handlers"
-	"curry/config"
+	"github.com/bitebait/curry/api/handlers"
+	"github.com/bitebait/curry/config"
 	"net/http"
 )
 

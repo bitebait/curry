@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"curry/api/db"
-	"curry/api/models"
 	"encoding/json"
+	"github.com/bitebait/curry/api/db"
+	"github.com/bitebait/curry/api/models"
 	"net/http"
 )
 
