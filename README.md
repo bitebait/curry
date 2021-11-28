@@ -95,6 +95,31 @@ currency:
 **🕷️ Para mais informações sobre spiders disponíveis de uma olhada em
 [/spiders](https://github.com/bitebait/curry/tree/master/crawler/spiders) e [AllSpiders()](https://github.com/bitebait/curry/blob/master/crawler/spiders/spiders.go)**.
 
+* * *
+<br>
+
+## ✅ **Lista de lojas monitoradas**
+
+<br>
+
+1. **[alboradainfo](https://www.alboradainfo.com/)**
+1. **[atacadocollections](https://www.atacadocollections.com/)**
+1. **[atacadogames](https://www.atacadogames.com/)**
+1. **[atlanticoshop](https://www.atlanticoshop.com.br/)**
+1. **[audiumelectronics](https://www.audiumelectronics.com/home)**
+1. **[cellshop](https://www.cellshop.com/br/)**
+1. **[eleganciacompany](https://www.eleganciacompany.com/)**
+1. **[madridcenter](https://www.madridcenter.com/)**
+1. **[megaeletronicos](https://www.megaeletronicos.com/br)**
+1. **[mobilezone](https://www.mobilezone.com.br/)**
+1. **[oneclick](https://oneclick.com.py/)**
+1. **[pioneerinter](https://www.pioneerinter.com/)**
+1. **[shoppingcentropioneer](https://shoppingcentropioneer.com/)**
+1. **[tecombras](https://www.tecombras.net/)**
+1. **[topdek](https://www.topdek.com.br/br)**
+1. **[victoriastore](https://www.victoriastore.com.br/)**
+1. **[visaovip](http://www.visaovip.com/)**
+
 <br>
 
 ### 📄 Exoneração de responsabilidade e problemas conhecidos
