@@ -1,11 +1,12 @@
 package spiders
 
 import (
+	"log"
+	"net/http"
+
 	"github.com/bitebait/curry/api/models"
 	"github.com/bitebait/curry/config"
 	"github.com/bitebait/curry/utils"
-	"log"
-	"net/http"
 
 	"github.com/gocolly/colly"
 )
@@ -26,6 +27,7 @@ func AllSpiders() []func(channel chan models.Store) {
 		AtacadoCollections,
 		AtlanticoShop,
 		AudiumEletronics,
+		AlboradaInfo,
 	}
 }
 
