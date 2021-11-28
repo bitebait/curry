@@ -10,7 +10,6 @@ require (
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/gocolly/colly v1.2.0
 	github.com/jasonlvhit/gocron v0.0.1
-	github.com/joiggama/money v2.0.0+incompatible
 	github.com/kennygrant/sanitize v1.2.4 // indirect
 	github.com/kkyr/fig v0.3.0
 	github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca // indirect
