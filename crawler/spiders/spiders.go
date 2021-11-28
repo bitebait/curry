@@ -29,6 +29,7 @@ func AllSpiders() []func(channel chan models.Store) {
 		AudiumEletronics,
 		AlboradaInfo,
 		OneClick,
+		TeCombras,
 	}
 }
 
