@@ -9,7 +9,7 @@ db:
   file_name: database.db
 
 cache:
-  maxage: 12  # MaxAge = 12 Hours
+  max_age: 12  # MaxAge = 12 Hours
 
 currency:
   currency: BRL # Don't change
