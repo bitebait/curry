@@ -28,6 +28,7 @@ func AllSpiders() []func(channel chan models.Store) {
 		AtlanticoShop,
 		AudiumEletronics,
 		AlboradaInfo,
+		OneClick,
 	}
 }
 
