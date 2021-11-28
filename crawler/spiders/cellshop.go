@@ -1,15 +1,16 @@
 package spiders
 
 import (
+	"strings"
+
 	"github.com/bitebait/curry/api/models"
 	"github.com/bitebait/curry/config"
-	"strings"
 
 	"github.com/gocolly/colly"
 )
 
 func CellShop(channel chan models.Store) {
-	spider := config.Spider{}
+	spider := &config.Spider{}
 	spider.Name = "cellshop"
 	spider.Channel = channel
 	spider.Selector = ".showCur"
@@ -19,5 +20,5 @@ func CellShop(channel chan models.Store) {
 		return data
 	}
 
-	runSpider(&spider)
+	runSpider(spider)
 }
