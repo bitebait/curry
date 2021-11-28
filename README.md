@@ -1,4 +1,4 @@
-# <div align="center">🍛 Curry - Câmbios 🍛</div>
+# <div align="center">🍛 Curry Câmbios</div>
 
 ## <div align="center">Valor do câmbio(USDxBRL) em lojas no Paraguay</div>
 
@@ -6,10 +6,9 @@
 
 ## 🎓 Sobre
 
-Curry é um WebCrawler escrito em Golang com finalidade de verificar os valores de câmbio(USDxBRL)
-em algumas lojas no Paraguay.
+Curry é um WebCrawler escrito em Golang com finalidade de verificar o valor do câmbio de **Dólar** para **Real** (**USD**x**BRL**) em algumas lojas no Paraguay.
 
-Demo: https://gocurry.herokuapp.com/api
+Demo: <https://gocurry.herokuapp.com/api>
 
 * * *
 
@@ -39,8 +38,8 @@ Exemplo de saida do terminal:
 2021/11/27 15:20:59 Running crawler...
 ```
 
-Agora basta acessar http://127.0.0.1:8000/api. Caso tenha alterado o endpoint favor verifique o log de saida do terminal
-ou o arquivo config.yml.
+Agora basta acessar <http://127.0.0.1:8000/api>.
+Caso tenha alterado o endpoint favor verifique o log de saida do terminal ou o arquivo config.yml.
 
 ⚠️️ **Não esqueça de configurar o arquivo *config.yml* conforme as suas necessidades!** ⚠️
 
@@ -77,33 +76,32 @@ ou o arquivo config.yml.
 
 ```yaml
 app:
-  host:
-  port: '8000'
+  host: # Server host IP
+  port: '8000' # Listen Port
 
 api:
-  endpoint: /api
+  endpoint: /api # api endpoint
 
 db:
-  file_name: database.db
+  file_name: database.db # sqlite file name
 
 cache:
-  maxage: 12  # MaxAge = 12 Hours
+  max_age: 12  # Refresh cache every 12 hours
 
 currency:
   currency: BRL # Don't change
 ```
 
 **🕷️ Para mais informações sobre spiders disponíveis de uma olhada em
-[/spiders](https://github.com/bitebait/curry/tree/master/crawler/spiders) e
-[AllSpiders()](https://github.com/bitebait/curry/blob/master/crawler/spiders/spiders.go)**
+[/spiders](https://github.com/bitebait/curry/tree/master/crawler/spiders) e [AllSpiders()](https://github.com/bitebait/curry/blob/master/crawler/spiders/spiders.go)**.
 
 <br>
 
 ### 📄 Exoneração de responsabilidade e problemas conhecidos
 
-- Qualquer uso do script é de responsabilidade apenas do usuário. Os usuários do script devem agir de acordo com os
+* Qualquer uso do script é de responsabilidade apenas do usuário. Os usuários do script devem agir de acordo com os
   termos dos sites acessados.
-- Como acontece com todos os sites, a estrutura do site pode mudar no futuro e, portanto, como costuma acontecer com
+* Como acontece com todos os sites, a estrutura do site pode mudar no futuro e, portanto, como costuma acontecer com
   scripts de scraping, descontinue-o. Não é realmente uma questão de saber se o código-fonte do site irá mudar, mas sim
   quando (então aproveite enquanto ainda está funcionando)
 
