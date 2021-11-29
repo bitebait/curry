@@ -30,6 +30,7 @@ func AllSpiders() []func(channel chan models.Store) {
 		AlboradaInfo,
 		OneClick,
 		TeCombras,
+		PontoCom,
 	}
 }
 

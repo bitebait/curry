@@ -119,6 +119,7 @@ currency:
 1. **[topdek](https://www.topdek.com.br/br)**
 1. **[victoriastore](https://www.victoriastore.com.br/)**
 1. **[visaovip](http://www.visaovip.com/)**
+1. **[pontocom](https://www.pontocom.com/)**
 
 <br>
 
