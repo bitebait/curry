@@ -123,6 +123,7 @@ currency:
 1. **[cambioschaco](https://www.cambioschaco.com.py/pt-br/)**
 1. **[bonanzacambios](https://bonanzacambios.com.py/)**
 1. **[mercosurcambios](https://site.mercosurcambios.com/)**
+1. **[dolarpy](https://www.dolarpy.com.br/)**
 
 <br>
 

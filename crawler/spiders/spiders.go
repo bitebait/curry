@@ -34,6 +34,7 @@ func AllSpiders() []func(channel chan models.Store) {
 		CambiosChaco,
 		BonanzaCambios,
 		MercosurCambios,
+		DolarPy,
 	}
 }
 
