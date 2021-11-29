@@ -121,6 +121,7 @@ currency:
 1. **[visaovip](http://www.visaovip.com/)**
 1. **[pontocom](https://www.pontocom.com/)**
 1. **[cambioschaco](https://www.cambioschaco.com.py/pt-br/)**
+1. **[bonanzacambios](https://bonanzacambios.com.py/)**
 
 <br>
 

@@ -32,6 +32,7 @@ func AllSpiders() []func(channel chan models.Store) {
 		TeCombras,
 		PontoCom,
 		CambiosChaco,
+		BonanzaCambios,
 	}
 }
 
