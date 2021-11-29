@@ -33,6 +33,7 @@ func AllSpiders() []func(channel chan models.Store) {
 		PontoCom,
 		CambiosChaco,
 		BonanzaCambios,
+		MercosurCambios,
 	}
 }
 
