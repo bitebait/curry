@@ -8,8 +8,6 @@
 
 Curry é um WebCrawler escrito em Golang com finalidade de verificar o valor do câmbio de **Dólar** para **Real** (**USD**x**BRL**) em algumas lojas no Paraguay.
 
-Demo: <https://gocurry.herokuapp.com/api>
-
 * * *
 
 ## 📌 Uso
