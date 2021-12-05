@@ -1,6 +1,7 @@
 package spiders
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -61,14 +62,26 @@ func runSpider(spider *config.Spider) {
 		}
 		spider.Channel <- *store
 	})
+	c.OnResponse(func(r *colly.Response) {
+		fmt.Println("SUCCESS: Visited", r.Request.URL)
+	})
+
+	c.OnScraped(func(r *colly.Response) {
+		fmt.Println("SUCCESS: Scrap Finished", r.Request.URL)
+	})
+
+	c.OnError(func(r *colly.Response, err error) {
+		log.Printf("FATAL: Something went wrong (%s): %s", r.Request.URL, err)
+	})
 
 	c.OnRequest(func(r *colly.Request) {
-		log.Println("Visiting", r.URL)
+		log.Println("INFO: Visiting", r.URL)
 	})
 
 	err := c.Visit(spider.URL)
 	if err != nil {
-		log.Panicf("Failed to visit URL: %s", spider.URL)
+		log.Panicf("FATAL: Failed to visit URL: %s\n", spider.URL)
 	}
+
 	c.Wait()
 }
