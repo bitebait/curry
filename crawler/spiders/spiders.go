@@ -4,11 +4,12 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/gocolly/colly"
+	"github.com/gocolly/colly/extensions"
+
 	"github.com/bitebait/curry/api/models"
 	"github.com/bitebait/curry/config"
 	"github.com/bitebait/curry/utils"
-
-	"github.com/gocolly/colly"
 )
 
 func AllSpiders() []func(channel chan models.Store) {
@@ -42,6 +43,8 @@ func runSpider(spider *config.Spider) {
 	c := colly.NewCollector(
 		colly.Async(true),
 	)
+
+	extensions.RandomUserAgent(c)
 
 	c.WithTransport(&http.Transport{
 		DisableKeepAlives: true,
