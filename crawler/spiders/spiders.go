@@ -42,6 +42,8 @@ func AllSpiders() []func(channel chan models.Store) {
 }
 
 func runSpider(spider *config.Spider) {
+	cfg := config.GetConfig()
+
 	c := colly.NewCollector(
 		colly.Async(true),
 	)
@@ -49,12 +51,10 @@ func runSpider(spider *config.Spider) {
 	extensions.RandomUserAgent(c)
 	c.WithTransport(&http.Transport{
 		DisableKeepAlives:     true,
-		ResponseHeaderTimeout: 60 * time.Second,
+		ResponseHeaderTimeout: time.Duration(cfg.Crawler.ResponseHeaderTimeout) * time.Second,
 	})
 
-	c.SetRequestTimeout(60 * time.Second)
-
-	cfg := config.GetConfig()
+	c.SetRequestTimeout(time.Duration(cfg.Crawler.ClientTimeout) * time.Second)
 
 	c.OnHTML(spider.Selector, func(e *colly.HTMLElement) {
 		store := &models.Store{
