@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/gocolly/colly"
 	"github.com/gocolly/colly/extensions"
@@ -46,10 +47,12 @@ func runSpider(spider *config.Spider) {
 	)
 
 	extensions.RandomUserAgent(c)
-
 	c.WithTransport(&http.Transport{
-		DisableKeepAlives: true,
+		DisableKeepAlives:     true,
+		ResponseHeaderTimeout: 60 * time.Second,
 	})
+
+	c.SetRequestTimeout(60 * time.Second)
 
 	cfg := config.GetConfig()
 
@@ -65,7 +68,6 @@ func runSpider(spider *config.Spider) {
 	c.OnResponse(func(r *colly.Response) {
 		fmt.Println("SUCCESS: Visited", r.Request.URL)
 	})
-
 	c.OnScraped(func(r *colly.Response) {
 		fmt.Println("SUCCESS: Scrap Finished", r.Request.URL)
 	})
