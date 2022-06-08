@@ -1,9 +1,10 @@
 package routes
 
 import (
+	"net/http"
+
 	"github.com/bitebait/curry/api/handlers"
 	"github.com/bitebait/curry/config"
-	"net/http"
 )
 
 func Init() {

@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"net/http"
+	"sync"
+
 	"github.com/bitebait/curry/api/db"
 	"github.com/bitebait/curry/api/models"
 	"github.com/bitebait/curry/api/routes"
 	"github.com/bitebait/curry/config"
 	"github.com/bitebait/curry/crawler"
-	"log"
-	"net/http"
-	"sync"
 
 	"github.com/jasonlvhit/gocron"
 )

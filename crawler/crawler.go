@@ -1,10 +1,11 @@
 package crawler
 
 import (
-	"github.com/bitebait/curry/api/models"
-	"github.com/bitebait/curry/crawler/spiders"
 	"log"
 	"sync"
+
+	"github.com/bitebait/curry/api/models"
+	"github.com/bitebait/curry/crawler/spiders"
 )
 
 func Run() *[]models.Store {

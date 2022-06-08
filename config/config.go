@@ -1,8 +1,9 @@
 package config
 
 import (
-	"github.com/kkyr/fig"
 	"log"
+
+	"github.com/kkyr/fig"
 )
 
 type config struct {

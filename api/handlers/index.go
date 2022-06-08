@@ -2,9 +2,10 @@ package handlers
 
 import (
 	"encoding/json"
+	"net/http"
+
 	"github.com/bitebait/curry/api/db"
 	"github.com/bitebait/curry/api/models"
-	"net/http"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
