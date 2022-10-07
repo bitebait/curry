@@ -17,6 +17,6 @@ require (
 	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/temoto/robotstxt v1.1.2 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	gorm.io/driver/sqlite v1.3.6
-	gorm.io/gorm v1.23.8
+	gorm.io/driver/sqlite v1.4.1
+	gorm.io/gorm v1.23.10
 )
