@@ -56,14 +56,14 @@ Caso tenha alterado o endpoint favor verifique o log de saida do terminal ou o a
       "id": 1,
       "name": "example_store1",
       "currency": "BRL",
-      "value": 5.7,
+      "value": "5.7",
       "url": "https://www.example_store1.com/"
     },
     {
       "id": 2,
       "name": "example_store2",
       "currency": "BRL",
-      "value": 5.72,
+      "value": "5.72",
       "url": "https://www.example_store2.com/"
     }
   ]
