@@ -11,8 +11,7 @@ import (
 	"github.com/bitebait/curry/api/routes"
 	"github.com/bitebait/curry/config"
 	"github.com/bitebait/curry/crawler"
-
-	"github.com/jasonlvhit/gocron"
+	"github.com/bitebait/curry/scheduler"
 )
 
 func main() {
@@ -48,19 +47,16 @@ func initCrawler(wg *sync.WaitGroup) {
 	go func() {
 		defer wg.Done()
 
-		cfg := config.GetConfig()
+		s := scheduler.Init(
+			func() {
+				log.Println("Running crawler...")
+				cache := &models.Cache{}
+				dB := db.GetDB()
+				cache.Stores = *crawler.Run()
+				dB.Create(cache)
+			},
+		)
 
-		s := gocron.NewScheduler()
-		err := s.Every(uint64(cfg.Cache.MaxAge)).From(gocron.NextTick()).Hours().Do(func() {
-			log.Println("Running crawler...")
-			cache := &models.Cache{}
-			dB := db.GetDB()
-			cache.Stores = *crawler.Run()
-			dB.Create(cache)
-		})
-		if err != nil {
-			log.Panic("Failed to run crawler.")
-		}
 		<-s.Start()
 	}()
 
