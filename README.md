@@ -1,6 +1,7 @@
 # <div align="center">🍛 Curry Câmbios</div>
 
 ## <div align="center">Valor do câmbio(USDxBRL) em lojas no Paraguay</div>
+## <div align="center">DEMO: <a href="https://curry-currency.herokuapp.com/api">https://curry-currency.herokuapp.com/api</a></div>
 
 <br>
 
