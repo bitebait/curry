@@ -110,6 +110,7 @@ currency:
 1. **[cellshop](https://www.cellshop.com/br/)**
 1. **[dolarpy](https://www.dolarpy.com.br/)**
 1. **[eleganciacompany](https://www.eleganciacompany.com/)**
+1. **[gabahobby](https://www.gabahobby.com/)**
 1. **[hbgames](http://www.hbgamespy.com/)**
 1. **[icompy](http://icompy.com/)**
 1. **[lgimportados](https://www.lgimportados.com/)**

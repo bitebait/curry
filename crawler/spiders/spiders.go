@@ -83,6 +83,7 @@ var AllSpiders []Runable = []Runable{
 	CellShop,
 	DolarPy,
 	EleganciaCompany,
+	GabbaHobby,
 	HBGames,
 	Icompy,
 	LGImportados,
