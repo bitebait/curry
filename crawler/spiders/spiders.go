@@ -29,7 +29,6 @@ func AllSpiders() []func(channel chan models.Store) {
 		MadridCenter,
 		MegaEletronicos,
 		MercosurCambios,
-		MobileZone,
 		OneClick,
 		PioneerInter,
 		ShoppingCentro,
