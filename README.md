@@ -107,6 +107,7 @@ currency:
 1. **[audiumelectronics](https://www.audiumelectronics.com/home)**
 1. **[bonanzacambios](https://bonanzacambios.com.py/)**
 1. **[cambioschaco](https://www.cambioschaco.com.py/pt-br/)**
+1. **[casaamericana](https://www.casaamericana.com.py/)**
 1. **[cellshop](https://www.cellshop.com/br/)**
 1. **[dolarpy](https://www.dolarpy.com.br/)**
 1. **[eleganciacompany](https://www.eleganciacompany.com/)**

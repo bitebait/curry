@@ -80,6 +80,7 @@ var AllSpiders []Runable = []Runable{
 	AudiumEletronics,
 	BonanzaCambios,
 	CambiosChaco,
+	CasaAmericana,
 	CellShop,
 	DolarPy,
 	EleganciaCompany,
