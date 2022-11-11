@@ -110,6 +110,7 @@ currency:
 1. **[cellshop](https://www.cellshop.com/br/)**
 1. **[dolarpy](https://www.dolarpy.com.br/)**
 1. **[eleganciacompany](https://www.eleganciacompany.com/)**
+1. **[hbgames](http://www.hbgamespy.com/)**
 1. **[madridcenter](https://www.madridcenter.com/)**
 1. **[megaeletronicos](https://www.megaeletronicos.com/br)**
 1. **[mercosurcambios](https://site.mercosurcambios.com/)**
