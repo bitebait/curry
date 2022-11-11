@@ -105,11 +105,14 @@ currency:
 1. **[atacadogames](https://www.atacadogames.com/)**
 1. **[atlanticoshop](https://www.atlanticoshop.com.br/)**
 1. **[audiumelectronics](https://www.audiumelectronics.com/home)**
+1. **[bonanzacambios](https://bonanzacambios.com.py/)**
+1. **[cambioschaco](https://www.cambioschaco.com.py/pt-br/)**
 1. **[cellshop](https://www.cellshop.com/br/)**
+1. **[dolarpy](https://www.dolarpy.com.br/)**
 1. **[eleganciacompany](https://www.eleganciacompany.com/)**
 1. **[madridcenter](https://www.madridcenter.com/)**
 1. **[megaeletronicos](https://www.megaeletronicos.com/br)**
-1. **[mobilezone](https://www.mobilezone.com.br/)**
+1. **[mercosurcambios](https://site.mercosurcambios.com/)**
 1. **[oneclick](https://oneclick.com.py/)**
 1. **[pioneerinter](https://www.pioneerinter.com/)**
 1. **[shoppingcentropioneer](https://shoppingcentropioneer.com/)**
@@ -117,11 +120,6 @@ currency:
 1. **[topdek](https://www.topdek.com.br/br)**
 1. **[victoriastore](https://www.victoriastore.com.br/)**
 1. **[visaovip](http://www.visaovip.com/)**
-1. **[pontocom](https://www.pontocom.com/)**
-1. **[cambioschaco](https://www.cambioschaco.com.py/pt-br/)**
-1. **[bonanzacambios](https://bonanzacambios.com.py/)**
-1. **[mercosurcambios](https://site.mercosurcambios.com/)**
-1. **[dolarpy](https://www.dolarpy.com.br/)**
 
 <br>
 
