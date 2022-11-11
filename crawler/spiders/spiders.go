@@ -96,6 +96,7 @@ var AllSpiders []Runnable = []Runnable{
 	mundoCelular,
 	oneClick,
 	pioneerInter,
+	proBook,
 	shoppingCentro,
 	tcheLoco,
 	teCombras,
