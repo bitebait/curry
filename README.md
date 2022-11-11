@@ -73,10 +73,6 @@ Caso tenha alterado o endpoint favor verifique o log de saida do terminal ou o a
 *config.yml:*
 
 ```yaml
-app:
-  host: # Server host IP
-  port: '8000' # Listen Port
-
 api:
   endpoint: /api # api endpoint
 
