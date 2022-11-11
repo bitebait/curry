@@ -90,6 +90,7 @@ var AllSpiders []Runnable = []Runnable{
 	icompy,
 	lgImportados,
 	madridCenter,
+	megaEletro,
 	megaEletronicos,
 	mercosurCambios,
 	mundoCelular,

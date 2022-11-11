@@ -117,6 +117,7 @@ currency:
 1. **[icompy](http://icompy.com/)**
 1. **[lgimportados](https://www.lgimportados.com/)**
 1. **[madridcenter](https://www.madridcenter.com/)**
+1. **[megaeletro](https://www.megaeletro.com.py/br)**
 1. **[megaeletronicos](https://www.megaeletronicos.com/br)**
 1. **[mercosurcambios](https://site.mercosurcambios.com/)**
 1. **[mundodocelular](https://www.mundodocelular.com/)**
@@ -128,6 +129,7 @@ currency:
 1. **[topdek](https://www.topdek.com.br/br)**
 1. **[victoriastore](https://www.victoriastore.com.br/)**
 1. **[visaovip](http://www.visaovip.com/)**
+
 
 <br>
 
