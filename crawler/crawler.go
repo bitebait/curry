@@ -52,7 +52,7 @@ func runCrawler() *[]models.Store {
 		stores = append(stores, i)
 	}
 
-	log.Printf("Success: %v urls visited.", len(stores))
+	log.Printf("FINISHED: %v of %v urls visited.", len(stores), len(spiders.AllSpiders))
 
 	return &stores
 }
