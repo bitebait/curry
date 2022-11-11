@@ -6,13 +6,18 @@ import (
 
 	"github.com/bitebait/curry/api/db"
 	"github.com/bitebait/curry/api/models"
+	"gorm.io/gorm"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
 	cache := &models.Cache{}
 	status := http.StatusOK
 
-	result := db.Database.Preload("Stores").Last(&cache)
+	result := db.Database.Preload("Stores",
+		func(db *gorm.DB) *gorm.DB {
+			return db.Order("stores.name ASC")
+		}).Last(&cache)
+
 	if result.RowsAffected <= 0 {
 		status = http.StatusNotFound
 	}
