@@ -6,6 +6,8 @@ import (
 	"github.com/kkyr/fig"
 )
 
+var GetConfig = getConfig()
+
 type config struct {
 	App struct {
 		AsciiName string `fig:"ascii_name" default:"\n ██████╗██╗   ██╗██████╗ ██████╗ ██╗   ██╗\n██╔════╝██║   ██║██╔══██╗██╔══██╗╚██╗ ██╔╝\n██║     ██║   ██║██████╔╝██████╔╝ ╚████╔╝ \n██║     ██║   ██║██╔══██╗██╔══██╗  ╚██╔╝  \n╚██████╗╚██████╔╝██║  ██║██║  ██║   ██║   \n ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   "`
@@ -36,7 +38,7 @@ type config struct {
 	}
 }
 
-func GetConfig() *config {
+func getConfig() *config {
 	var cfg config
 	if err := fig.Load(&cfg, fig.File("config.yml")); err != nil {
 		log.Panic(err)

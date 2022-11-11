@@ -4,11 +4,33 @@ import (
 	"log"
 	"sync"
 
+	"github.com/bitebait/curry/api/db"
 	"github.com/bitebait/curry/api/models"
 	"github.com/bitebait/curry/crawler/spiders"
+	"github.com/bitebait/curry/scheduler"
 )
 
-func Run() *[]models.Store {
+func Init(wg *sync.WaitGroup) {
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+
+		s := scheduler.Init(
+			func() {
+				log.Println("Running crawler...")
+				cache := &models.Cache{}
+				dB := db.GetDB()
+				cache.Stores = *runCrawler()
+				dB.Create(cache)
+			},
+		)
+
+		<-s.Start()
+	}()
+
+}
+
+func runCrawler() *[]models.Store {
 	var stores []models.Store
 
 	wg := sync.WaitGroup{}

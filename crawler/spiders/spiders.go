@@ -26,7 +26,6 @@ type Runnable interface {
 }
 
 func (s Spider) RunSpider(channel chan models.Store) {
-	cfg := config.GetConfig()
 
 	c := colly.NewCollector(
 		colly.Async(true),
@@ -35,15 +34,15 @@ func (s Spider) RunSpider(channel chan models.Store) {
 	extensions.RandomUserAgent(c)
 	c.WithTransport(&http.Transport{
 		DisableKeepAlives:     true,
-		ResponseHeaderTimeout: time.Duration(cfg.Crawler.ResponseHeaderTimeout) * time.Second,
+		ResponseHeaderTimeout: time.Duration(config.GetConfig.Crawler.ResponseHeaderTimeout) * time.Second,
 	})
 
-	c.SetRequestTimeout(time.Duration(cfg.Crawler.ClientTimeout) * time.Second)
+	c.SetRequestTimeout(time.Duration(config.GetConfig.Crawler.ClientTimeout) * time.Second)
 
 	c.OnHTML(s.Selector, func(e *colly.HTMLElement) {
 		store := &models.Store{
 			Name:     s.Name,
-			Currency: cfg.Currency.Currency,
+			Currency: config.GetConfig.Currency.Currency,
 			Value:    helpers.FormatCurrency(s.GetValue(e)),
 			URL:      s.URL,
 		}

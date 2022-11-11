@@ -8,6 +8,5 @@ import (
 )
 
 func Init() {
-	cfg := config.GetConfig()
-	http.HandleFunc(cfg.Api.Endpoint, handlers.Index)
+	http.HandleFunc(config.GetConfig.Api.Endpoint, handlers.Index)
 }
