@@ -117,6 +117,7 @@ currency:
 1. **[madridcenter](https://www.madridcenter.com/)**
 1. **[megaeletronicos](https://www.megaeletronicos.com/br)**
 1. **[mercosurcambios](https://site.mercosurcambios.com/)**
+1. **[mundodocelular](https://www.mundodocelular.com/)**
 1. **[oneclick](https://oneclick.com.py/)**
 1. **[pioneerinter](https://www.pioneerinter.com/)**
 1. **[shoppingcentropioneer](https://shoppingcentropioneer.com/)**

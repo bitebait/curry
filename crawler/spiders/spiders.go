@@ -90,6 +90,7 @@ var AllSpiders []Runable = []Runable{
 	MadridCenter,
 	MegaEletronicos,
 	MercosurCambios,
+	MundoCelular,
 	OneClick,
 	PioneerInter,
 	ShoppingCentro,
