@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var MadridCenter = &Spider{
+var madridCenter = &Spider{
 	Name:     "madridcenter",
 	Selector: "body > header > div > div > div > div.item.top-quotes > div.col-12.text3 > span > span:nth-child(1) > strong",
 	URL:      "https://www.madridcenter.com/",

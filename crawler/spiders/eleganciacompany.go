@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var EleganciaCompany = &Spider{
+var eleganciaCompany = &Spider{
 	Name:     "eleganciacompany",
 	Selector: "div.quotation span",
 	URL:      "https://www.eleganciacompany.com/",

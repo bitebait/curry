@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var CambiosChaco = &Spider{
+var cambiosChaco = &Spider{
 	Name:     "cambioschaco",
 	Selector: "#arb-exchange-brl > td:nth-child(3) > span:nth-child(1)",
 	URL:      "https://www.cambioschaco.com.py/pt-br/",

@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var MegaEletronicos = &Spider{
+var megaEletronicos = &Spider{
 	Name:     "megaeletronicos",
 	Selector: "div.d-flex.flex-row.align-items-center.cotizacion p:nth-child(4)",
 	URL:      "https://www.megaeletronicos.com/br",

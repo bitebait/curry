@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var AudiumEletronics = &Spider{
+var audiumEletronics = &Spider{
 	Name:     "audiumelectronics",
 	Selector: "div.quotation:nth-child(3) > span:nth-child(1)",
 	URL:      "https://www.audiumelectronics.com/home",

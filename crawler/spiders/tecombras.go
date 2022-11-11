@@ -6,7 +6,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var TeCombras = &Spider{
+var teCombras = &Spider{
 	Name:     "tecombras",
 	Selector: ".currency-selector > span:nth-child(1)",
 	URL:      "https://www.tecombras.net/",

@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var Icompy = &Spider{
+var icompy = &Spider{
 	Name:     "icompy",
 	Selector: "div.pt_menu:nth-child(2) > div:nth-child(1) > a:nth-child(1) > span:nth-child(1)",
 	URL:      "http://icompy.com/",

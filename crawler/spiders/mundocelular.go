@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var MundoCelular = &Spider{
+var mundoCelular = &Spider{
 	Name:     "mundodocelular",
 	Selector: ".heading > div:nth-child(1) > span:nth-child(4)",
 	URL:      "https://www.mundodocelular.com/",

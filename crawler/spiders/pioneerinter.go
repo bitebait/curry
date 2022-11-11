@@ -6,7 +6,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var PioneerInter = &Spider{
+var pioneerInter = &Spider{
 	Name:     "pioneerinter",
 	Selector: ".currency-selector > span:nth-child(1)",
 	URL:      "https://www.pioneerinter.com/",

@@ -6,7 +6,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var CasaAmericana = &Spider{
+var casaAmericana = &Spider{
 	Name:     "casaamericana",
 	Selector: "span.justify-center:nth-child(2)",
 	URL:      "https://www.casaamericana.com.py/",

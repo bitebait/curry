@@ -6,7 +6,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var CellShop = &Spider{
+var cellShop = &Spider{
 	Name:     "cellshop",
 	Selector: ".showCur",
 	URL:      "https://www.cellshop.com/br/",

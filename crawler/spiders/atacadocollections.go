@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var AtacadoCollections = &Spider{
+var atacadoCollections = &Spider{
 	Name:     "atacadocollections",
 	Selector: ".price",
 	URL:      "https://www.atacadocollections.com/",

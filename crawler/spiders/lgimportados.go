@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var LGImportados = &Spider{
+var lgImportados = &Spider{
 	Name:     "lgimportados",
 	Selector: ".quotation > span:nth-child(1) > strong:nth-child(1)",
 	URL:      "https://www.lgimportados.com/",

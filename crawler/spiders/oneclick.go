@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var OneClick = &Spider{
+var oneClick = &Spider{
 	Name:     "oneclick",
 	Selector: ".login-box > center:nth-child(1) > h5:nth-child(1)",
 	URL:      "https://oneclick.com.py/",

@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var AlboradaInfo = &Spider{
+var alboradaInfo = &Spider{
 	Name:     "alboradainfo",
 	Selector: ".quotation > span:nth-child(2)",
 	URL:      "https://www.alboradainfo.com/",

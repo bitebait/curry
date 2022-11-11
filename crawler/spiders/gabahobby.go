@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var GabbaHobby = &Spider{
+var gabbaHobby = &Spider{
 	Name:     "gabahobby",
 	Selector: ".special > ul:nth-child(1) > li:nth-child(3) > span:nth-child(2)",
 	URL:      "https://www.gabahobby.com/",

@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var VisaoVip = &Spider{
+var visaoVip = &Spider{
 	Name:     "visaovip",
 	Selector: "div.ui-panelgrid-cell:nth-child(1) > span:nth-child(1)",
 	URL:      "http://visaovip.com/",

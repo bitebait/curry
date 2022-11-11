@@ -4,7 +4,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var DolarPy = &Spider{
+var dolarPy = &Spider{
 	Name:     "dolarpy",
 	Selector: ".blue2",
 	URL:      "https://www.dolarpy.com.br/",

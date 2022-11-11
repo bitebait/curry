@@ -6,7 +6,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var TopDek = &Spider{
+var topDek = &Spider{
 	Name:     "topdek",
 	Selector: "body > div:nth-child(8) > div:nth-child(1) > p:nth-child(1)",
 	URL:      "https://www.topdek.com.br/br",
