@@ -96,6 +96,7 @@ var AllSpiders []Runnable = []Runnable{
 	oneClick,
 	pioneerInter,
 	shoppingCentro,
+	tcheLoco,
 	teCombras,
 	topDek,
 	victoriaStore,
