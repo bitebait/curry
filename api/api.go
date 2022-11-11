@@ -24,7 +24,7 @@ func Init(wg *sync.WaitGroup) {
 		fmt.Println(config.GetConfig.App.AsciiName)
 		log.Printf("Running and Listening on :%s\n", os.Getenv("PORT"))
 		log.Printf("API Endpoint: %s\n", config.GetConfig.Api.Endpoint)
-		log.Fatal(http.ListenAndServe(os.Getenv("PORT"), nil))
+		log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), nil))
 	}()
 
 }
