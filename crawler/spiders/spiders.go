@@ -82,6 +82,7 @@ var AllSpiders []Runnable = []Runnable{
 	cambiosChaco,
 	casaAmericana,
 	cellShop,
+	comprasParaguai,
 	dolarPy,
 	eleganciaCompany,
 	gabbaHobby,

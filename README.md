@@ -109,6 +109,7 @@ currency:
 1. **[cambioschaco](https://www.cambioschaco.com.py/pt-br/)**
 1. **[casaamericana](https://www.casaamericana.com.py/)**
 1. **[cellshop](https://www.cellshop.com/br/)**
+1. **[comprasparaguai](https://www.comprasparaguai.com.br/)**
 1. **[dolarpy](https://www.dolarpy.com.br/)**
 1. **[eleganciacompany](https://www.eleganciacompany.com/)**
 1. **[gabahobby](https://www.gabahobby.com/)**
