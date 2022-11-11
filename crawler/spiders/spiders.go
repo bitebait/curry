@@ -21,7 +21,7 @@ type Spider struct {
 	URL      string
 }
 
-type Runable interface {
+type Runnable interface {
 	RunSpider(channel chan models.Store)
 }
 
@@ -72,7 +72,7 @@ func (s Spider) RunSpider(channel chan models.Store) {
 	c.Wait()
 }
 
-var AllSpiders []Runable = []Runable{
+var AllSpiders []Runnable = []Runnable{
 	AlboradaInfo,
 	AtacadoCollections,
 	AtacadoGames,

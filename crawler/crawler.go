@@ -16,7 +16,7 @@ func Run() *[]models.Store {
 
 	for _, spider := range spiders.AllSpiders {
 		wg.Add(1)
-		go func(spider spiders.Runable) {
+		go func(spider spiders.Runnable) {
 			defer wg.Done()
 			spider.RunSpider(channel)
 		}(spider)
