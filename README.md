@@ -112,6 +112,7 @@ currency:
 1. **[eleganciacompany](https://www.eleganciacompany.com/)**
 1. **[hbgames](http://www.hbgamespy.com/)**
 1. **[icompy](http://icompy.com/)**
+1. **[lgimportados](https://www.lgimportados.com/)**
 1. **[madridcenter](https://www.madridcenter.com/)**
 1. **[megaeletronicos](https://www.megaeletronicos.com/br)**
 1. **[mercosurcambios](https://site.mercosurcambios.com/)**

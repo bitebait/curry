@@ -85,6 +85,7 @@ var AllSpiders []Runable = []Runable{
 	EleganciaCompany,
 	HBGames,
 	Icompy,
+	LGImportados,
 	MadridCenter,
 	MegaEletronicos,
 	MercosurCambios,
