@@ -3,22 +3,15 @@ package spiders
 import (
 	"strings"
 
-	"github.com/bitebait/curry/api/models"
-	"github.com/bitebait/curry/config"
-
 	"github.com/gocolly/colly"
 )
 
-func PioneerInter(channel chan models.Store) {
-	spider := &config.Spider{}
-	spider.Name = "pioneerinter"
-	spider.Channel = channel
-	spider.Selector = ".currency-selector > span:nth-child(1)"
-	spider.URL = "https://www.pioneerinter.com/"
-	spider.GetValue = func(e *colly.HTMLElement) string {
+var PioneerInter = &Spider{
+	Name:     "pioneerinter",
+	Selector: ".currency-selector > span:nth-child(1)",
+	URL:      "https://www.pioneerinter.com/",
+	GetValue: func(e *colly.HTMLElement) string {
 		data := strings.TrimSpace(strings.Split(e.Text, "=")[1])
 		return data
-	}
-
-	runSpider(spider)
+	},
 }

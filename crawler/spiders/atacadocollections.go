@@ -3,22 +3,15 @@ package spiders
 import (
 	"strings"
 
-	"github.com/bitebait/curry/api/models"
-	"github.com/bitebait/curry/config"
-
 	"github.com/gocolly/colly"
 )
 
-func AtacadoCollections(channel chan models.Store) {
-	spider := &config.Spider{}
-	spider.Name = "atacadocollections"
-	spider.Channel = channel
-	spider.Selector = ".price"
-	spider.URL = "https://www.atacadocollections.com/"
-	spider.GetValue = func(e *colly.HTMLElement) string {
+var AtacadoCollections = &Spider{
+	Name:     "atacadocollections",
+	Selector: ".price",
+	URL:      "https://www.atacadocollections.com/",
+	GetValue: func(e *colly.HTMLElement) string {
 		data := strings.TrimSpace(e.Text)
 		return data
-	}
-
-	runSpider(spider)
+	},
 }

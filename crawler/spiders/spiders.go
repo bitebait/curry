@@ -11,35 +11,21 @@ import (
 
 	"github.com/bitebait/curry/api/models"
 	"github.com/bitebait/curry/config"
-	"github.com/bitebait/curry/utils"
+	"github.com/bitebait/curry/helpers"
 )
 
-func AllSpiders() []func(channel chan models.Store) {
-	return []func(channel chan models.Store){
-		AlboradaInfo,
-		AtacadoCollections,
-		AtacadoGames,
-		AtlanticoShop,
-		AudiumEletronics,
-		BonanzaCambios,
-		CambiosChaco,
-		CellShop,
-		DolarPy,
-		EleganciaCompany,
-		MadridCenter,
-		MegaEletronicos,
-		MercosurCambios,
-		OneClick,
-		PioneerInter,
-		ShoppingCentro,
-		TeCombras,
-		TopDek,
-		VictoriaStore,
-		VisaoVip,
-	}
+type Spider struct {
+	Name     string
+	Selector string
+	GetValue func(e *colly.HTMLElement) string
+	URL      string
 }
 
-func runSpider(spider *config.Spider) {
+type Runable interface {
+	RunSpider(channel chan models.Store)
+}
+
+func (s Spider) RunSpider(channel chan models.Store) {
 	cfg := config.GetConfig()
 
 	c := colly.NewCollector(
@@ -54,14 +40,14 @@ func runSpider(spider *config.Spider) {
 
 	c.SetRequestTimeout(time.Duration(cfg.Crawler.ClientTimeout) * time.Second)
 
-	c.OnHTML(spider.Selector, func(e *colly.HTMLElement) {
+	c.OnHTML(s.Selector, func(e *colly.HTMLElement) {
 		store := &models.Store{
-			Name:     spider.Name,
+			Name:     s.Name,
 			Currency: cfg.Currency.Currency,
-			Value:    utils.FormatCurrency(spider.GetValue(e)),
-			URL:      spider.URL,
+			Value:    helpers.FormatCurrency(s.GetValue(e)),
+			URL:      s.URL,
 		}
-		spider.Channel <- *store
+		channel <- *store
 	})
 	c.OnResponse(func(r *colly.Response) {
 		fmt.Println("SUCCESS: Visited", r.Request.URL)
@@ -78,10 +64,33 @@ func runSpider(spider *config.Spider) {
 		log.Println("INFO: Visiting", r.URL)
 	})
 
-	err := c.Visit(spider.URL)
+	err := c.Visit(s.URL)
 	if err != nil {
-		log.Panicf("FATAL: Failed to visit URL: %s\n", spider.URL)
+		log.Panicf("FATAL: Failed to visit URL: %s\n", s.URL)
 	}
 
 	c.Wait()
+}
+
+var AllSpiders []Runable = []Runable{
+	AlboradaInfo,
+	AtacadoCollections,
+	AtacadoGames,
+	AtlanticoShop,
+	AudiumEletronics,
+	BonanzaCambios,
+	CambiosChaco,
+	CellShop,
+	DolarPy,
+	EleganciaCompany,
+	MadridCenter,
+	MegaEletronicos,
+	MercosurCambios,
+	OneClick,
+	PioneerInter,
+	ShoppingCentro,
+	TeCombras,
+	TopDek,
+	VictoriaStore,
+	VisaoVip,
 }

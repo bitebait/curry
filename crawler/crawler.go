@@ -14,8 +14,12 @@ func Run() *[]models.Store {
 	wg := sync.WaitGroup{}
 	channel := make(chan models.Store)
 
-	for _, spider := range spiders.AllSpiders() {
-		runParallel(spider, &wg, channel)
+	for _, spider := range spiders.AllSpiders {
+		wg.Add(1)
+		go func(spider spiders.Runable) {
+			defer wg.Done()
+			spider.RunSpider(channel)
+		}(spider)
 	}
 
 	go func() {
@@ -30,13 +34,4 @@ func Run() *[]models.Store {
 	log.Printf("Success: %v urls visited.", len(stores))
 
 	return &stores
-}
-
-func runParallel(f func(c chan models.Store), wg *sync.WaitGroup, c chan models.Store) {
-	wg.Add(1)
-
-	go func() {
-		defer wg.Done()
-		f(c)
-	}()
 }
