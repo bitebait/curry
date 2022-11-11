@@ -2,10 +2,6 @@
 api:
   endpoint: /api
 
-app:
-  host: null
-  port: "8000"
-
 cache:
   max_age: 12
 
