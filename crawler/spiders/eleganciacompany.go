@@ -1,8 +1,6 @@
 package spiders
 
 import (
-	"strings"
-
 	"github.com/gocolly/colly"
 )
 
@@ -11,7 +9,6 @@ var EleganciaCompany = &Spider{
 	Selector: "div.quotation span",
 	URL:      "https://www.eleganciacompany.com/",
 	GetValue: func(e *colly.HTMLElement) string {
-		data := strings.TrimSpace(e.Text)
-		return data
+		return e.Text
 	},
 }

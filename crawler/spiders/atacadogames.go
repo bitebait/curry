@@ -11,7 +11,6 @@ var AtacadoGames = &Spider{
 	Selector: "div.header-extra div.wrap.is-centralized ul.grid li.grid-item span.text.has-icon",
 	URL:      "https://www.atacadogames.com/",
 	GetValue: func(e *colly.HTMLElement) string {
-		data := strings.TrimSpace(strings.Split(e.Text, "Cotação")[1])
-		return data
+		return strings.Split(e.Text, "Cotação")[1]
 	},
 }
