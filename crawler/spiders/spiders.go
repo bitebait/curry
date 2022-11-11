@@ -84,6 +84,7 @@ var AllSpiders []Runable = []Runable{
 	DolarPy,
 	EleganciaCompany,
 	HBGames,
+	Icompy,
 	MadridCenter,
 	MegaEletronicos,
 	MercosurCambios,
