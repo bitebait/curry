@@ -9,12 +9,10 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	dB := db.GetDB()
-
 	cache := &models.Cache{}
 	status := http.StatusOK
 
-	result := dB.Preload("Stores").Last(&cache)
+	result := db.Database.Preload("Stores").Last(&cache)
 	if result.RowsAffected <= 0 {
 		status = http.StatusNotFound
 	}

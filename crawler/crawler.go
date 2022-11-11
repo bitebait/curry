@@ -18,10 +18,9 @@ func Init(wg *sync.WaitGroup) {
 		s := scheduler.Init(
 			func() {
 				log.Println("Running crawler...")
-				cache := &models.Cache{}
-				dB := db.GetDB()
-				cache.Stores = *runCrawler()
-				dB.Create(cache)
+				db.Database.Create(&models.Cache{
+					Stores: *runCrawler(),
+				})
 			},
 		)
 
