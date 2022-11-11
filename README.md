@@ -91,7 +91,7 @@ currency:
 ```
 
 **🕷️ Para mais informações sobre spiders disponíveis de uma olhada em
-[/spiders](https://github.com/bitebait/curry/tree/master/crawler/spiders) e [AllSpiders()](https://github.com/bitebait/curry/blob/master/crawler/spiders/spiders.go)**.
+[/spiders](https://github.com/bitebait/curry/tree/master/crawler/spiders) e [AllSpiders](https://github.com/bitebait/curry/blob/master/crawler/spiders/spiders.go)**.
 
 * * *
 <br>
