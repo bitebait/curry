@@ -14,6 +14,7 @@ type config struct {
 	}
 
 	Api struct {
+		Port     string `fig:"port" default:"8000"`
 		Endpoint string `fig:"endpoint" default:"/api"`
 	}
 

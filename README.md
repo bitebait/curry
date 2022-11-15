@@ -74,6 +74,7 @@ Caso tenha alterado o endpoint favor verifique o log de saida do terminal ou o a
 
 ```yaml
 api:
+  port: 8000 # api listen port
   endpoint: /api # api endpoint
 
 db:

@@ -1,5 +1,6 @@
 ---
 api:
+  port: 8000
   endpoint: /api
 
 cache:

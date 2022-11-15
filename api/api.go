@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"sync"
 
 	"github.com/bitebait/curry/api/db"
@@ -22,9 +21,9 @@ func Init(wg *sync.WaitGroup) {
 		routes.Init()
 
 		fmt.Println(config.GetConfig.App.AsciiName)
-		log.Printf("Running and Listening on :%s\n", os.Getenv("PORT"))
+		log.Printf("Running and Listening on :%s\n", config.GetConfig.Api.Port)
 		log.Printf("API Endpoint: %s\n", config.GetConfig.Api.Endpoint)
-		log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), nil))
+		log.Fatal(http.ListenAndServe(":"+config.GetConfig.Api.Port, nil))
 	}()
 
 }
