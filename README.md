@@ -87,8 +87,8 @@ currency:
   currency: BRL # Don't change
 ```
 
-**🕷️ Para mais informações sobre spiders disponíveis de uma olhada em
-[/spiders](https://github.com/bitebait/curry/tree/master/crawler/spiders) e [AllSpiders](https://github.com/bitebait/curry/blob/master/crawler/spiders/spiders.go)**.
+**🕷️ Para mais informações sobre spiders disponíveis e como adicionar uma nova spider, de uma olhada em
+[/spiders](https://github.com/bitebait/curry/tree/master/crawler/spiders) e [func NewSpider()](https://github.com/bitebait/curry/blob/master/crawler/spiders/spiders.go)**.
 
 * * *
 <br>
