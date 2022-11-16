@@ -16,7 +16,7 @@ func FormatCurrency(s string) string {
 
 	cur, err := strconv.ParseFloat(reg.ReplaceAllString(strings.ReplaceAll(strings.TrimSpace(s), ",", "."), ""), 64)
 	if err != nil {
-		log.Panic(err)
+		log.Fatal(err)
 	}
 
 	return fmt.Sprintf("%.2f", cur)
