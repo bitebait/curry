@@ -4,11 +4,13 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var atacadoCollections = &Spider{
-	Name:     "atacadocollections",
-	Selector: ".price",
-	URL:      "https://www.atacadocollections.com/",
-	GetValue: func(e *colly.HTMLElement) string {
-		return e.Text
-	},
+func init() {
+	NewSpider(
+		"atacadocollections",
+		".price",
+		"https://www.atacadocollections.com/",
+		func(e *colly.HTMLElement) string {
+			return e.Text
+		},
+	)
 }

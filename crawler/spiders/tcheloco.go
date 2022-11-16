@@ -4,11 +4,13 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var tcheLoco = &Spider{
-	Name:     "tcheloco",
-	Selector: ".nohover",
-	URL:      "https://www.tcheloco.com.py/br/",
-	GetValue: func(e *colly.HTMLElement) string {
-		return e.Text
-	},
+func init() {
+	NewSpider(
+		"tcheloco",
+		".nohover",
+		"https://www.tcheloco.com.py/br/",
+		func(e *colly.HTMLElement) string {
+			return e.Text
+		},
+	)
 }

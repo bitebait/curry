@@ -31,11 +31,12 @@ func Init(wg *sync.WaitGroup) {
 
 func runCrawler() *[]models.Store {
 	var stores []models.Store
+	var allSpiders = *spiders.GetAllSpiders()
 
 	wg := sync.WaitGroup{}
 	channel := make(chan models.Store)
 
-	for _, spider := range spiders.AllSpiders {
+	for _, spider := range allSpiders {
 		wg.Add(1)
 		go func(spider spiders.Runnable) {
 			defer wg.Done()
@@ -52,7 +53,7 @@ func runCrawler() *[]models.Store {
 		stores = append(stores, i)
 	}
 
-	log.Printf("FINISHED: %v of %v urls visited.", len(stores), len(spiders.AllSpiders))
+	log.Printf("FINISHED: %v of %v urls visited.", len(stores), len(allSpiders))
 
 	return &stores
 }

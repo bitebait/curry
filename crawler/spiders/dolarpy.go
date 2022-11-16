@@ -4,11 +4,13 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var dolarPy = &Spider{
-	Name:     "dolarpy",
-	Selector: ".blue2",
-	URL:      "https://www.dolarpy.com.br/",
-	GetValue: func(e *colly.HTMLElement) string {
-		return e.Text
-	},
+func init() {
+	NewSpider(
+		"dolarpy",
+		".blue2",
+		"https://www.dolarpy.com.br/",
+		func(e *colly.HTMLElement) string {
+			return e.Text
+		},
+	)
 }

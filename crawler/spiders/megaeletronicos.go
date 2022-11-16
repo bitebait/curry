@@ -4,11 +4,13 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var megaEletronicos = &Spider{
-	Name:     "megaeletronicos",
-	Selector: "div.d-flex.flex-row.align-items-center.cotizacion p:nth-child(4)",
-	URL:      "https://www.megaeletronicos.com/br",
-	GetValue: func(e *colly.HTMLElement) string {
-		return e.Text
-	},
+func init() {
+	NewSpider(
+		"megaeletronicos",
+		"div.d-flex.flex-row.align-items-center.cotizacion p:nth-child(4)",
+		"https://www.megaeletronicos.com/br",
+		func(e *colly.HTMLElement) string {
+			return e.Text
+		},
+	)
 }

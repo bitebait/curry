@@ -1,14 +1,14 @@
 package spiders
 
-import (
-	"github.com/gocolly/colly"
-)
+import "github.com/gocolly/colly"
 
-var alboradaInfo = &Spider{
-	Name:     "alboradainfo",
-	Selector: ".quotation > span:nth-child(2)",
-	URL:      "https://www.alboradainfo.com/",
-	GetValue: func(e *colly.HTMLElement) string {
-		return e.Text
-	},
+func init() {
+	NewSpider(
+		"alboradainfo",
+		".quotation > span:nth-child(2)",
+		"https://www.alboradainfo.com/",
+		func(e *colly.HTMLElement) string {
+			return e.Text
+		},
+	)
 }

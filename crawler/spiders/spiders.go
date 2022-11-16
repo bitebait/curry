@@ -14,18 +14,33 @@ import (
 	"github.com/bitebait/curry/helpers"
 )
 
-type Spider struct {
+var spiders []Runnable
+
+type Runnable interface {
+	RunSpider(channel chan models.Store)
+}
+
+func GetAllSpiders() *[]Runnable {
+	return &spiders
+}
+
+type spider struct {
 	Name     string
 	Selector string
 	GetValue func(e *colly.HTMLElement) string
 	URL      string
 }
 
-type Runnable interface {
-	RunSpider(channel chan models.Store)
+func NewSpider(name, selector, url string, getValue func(e *colly.HTMLElement) string) {
+	s := new(spider)
+	s.Name = name
+	s.Selector = selector
+	s.URL = url
+	s.GetValue = getValue
+	spiders = append(spiders, s)
 }
 
-func (s Spider) RunSpider(channel chan models.Store) {
+func (s spider) RunSpider(channel chan models.Store) {
 
 	c := colly.NewCollector(
 		colly.Async(true),
@@ -70,37 +85,4 @@ func (s Spider) RunSpider(channel chan models.Store) {
 	}
 
 	c.Wait()
-}
-
-var AllSpiders []Runnable = []Runnable{
-	alboradaInfo,
-	atacadoCollections,
-	atacadoGames,
-	atlanticoShop,
-	audiumEletronics,
-	bonanzaCambios,
-	cambiosChaco,
-	casaAmericana,
-	cellShop,
-	comprasParaguai,
-	dolarPy,
-	eleganciaCompany,
-	gabbaHobby,
-	hbGames,
-	icompy,
-	lgImportados,
-	madridCenter,
-	megaEletro,
-	megaEletronicos,
-	mercosurCambios,
-	mundoCelular,
-	oneClick,
-	pioneerInter,
-	proBook,
-	shoppingCentro,
-	tcheLoco,
-	teCombras,
-	topDek,
-	victoriaStore,
-	visaoVip,
 }
