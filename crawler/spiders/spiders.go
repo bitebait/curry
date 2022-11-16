@@ -41,12 +41,11 @@ func NewSpider(name, selector, url string, getValue func(e *colly.HTMLElement) s
 }
 
 func (s spider) RunSpider(channel chan models.Store) {
-
-	c := colly.NewCollector(
-		colly.Async(true),
-	)
+	c := colly.NewCollector(colly.Async(true))
 
 	extensions.RandomUserAgent(c)
+	extensions.Referer(c)
+
 	c.WithTransport(&http.Transport{
 		DisableKeepAlives:     true,
 		ResponseHeaderTimeout: time.Duration(config.GetConfig.Crawler.ResponseHeaderTimeout) * time.Second,
@@ -61,7 +60,6 @@ func (s spider) RunSpider(channel chan models.Store) {
 			Value:    helpers.FormatCurrency(s.GetValue(e)),
 			URL:      s.URL,
 		}
-
 		channel <- *store
 	})
 	c.OnResponse(func(r *colly.Response) {
