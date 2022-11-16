@@ -19,12 +19,12 @@ Para utilizar, basta seguir os passos abaixo:
 ```sh
 git clone https://github.com/bitebait/curry.git
 cd curry/
-go run app.go
+go run .
 ```
 
 Exemplo de saida do terminal:
 
-```sh
+```
  ██████╗██╗   ██╗██████╗ ██████╗ ██╗   ██╗
 ██╔════╝██║   ██║██╔══██╗██╔══██╗╚██╗ ██╔╝
 ██║     ██║   ██║██████╔╝██████╔╝ ╚████╔╝ 
