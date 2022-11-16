@@ -49,8 +49,6 @@ Caso tenha alterado o endpoint favor verifique o log de saida do terminal ou o a
 {
   "id": 1,
   "createdAt": "2021-11-27T15:21:06.343499301-03:00",
-  "updateAt": "2021-11-27T15:21:06.343499301-03:00",
-  "deletedAt": null,
   "items": [
     {
       "id": 1,
