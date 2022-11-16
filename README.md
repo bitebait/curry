@@ -31,9 +31,12 @@ Exemplo de saida do terminal:
 ██║     ██║   ██║██╔══██╗██╔══██╗  ╚██╔╝  
 ╚██████╗╚██████╔╝██║  ██║██║  ██║   ██║   
  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
-2021/11/27 15:20:58 Running and Listening on :8000
-2021/11/27 15:20:58 API Endpoint: /api
-2021/11/27 15:20:59 Running crawler...
+2021/11/27 19:06:00 Running and Listening on :8000
+2021/11/27 19:06:00 API Endpoint: /api
+2021/11/27 19:06:01 Running crawler...
+...
+2021/11/27 19:06:09 FINISHED: 30 of 30 urls visited.
+2021/11/27 19:06:09 CRAWLER function took 8.403559105s.
 ```
 
 Agora basta acessar <http://127.0.0.1:8000/api>.

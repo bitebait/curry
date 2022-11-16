@@ -3,6 +3,7 @@ package crawler
 import (
 	"log"
 	"sync"
+	"time"
 
 	"github.com/bitebait/curry/api/db"
 	"github.com/bitebait/curry/api/models"
@@ -32,6 +33,11 @@ func Init(wg *sync.WaitGroup) {
 func runCrawler() *[]models.Store {
 	var stores []models.Store
 	var allSpiders = *spiders.GetAllSpiders()
+
+	now := time.Now()
+	defer func() {
+		log.Printf("CRAWLER function took %s.", time.Since(now))
+	}()
 
 	wg := sync.WaitGroup{}
 	channel := make(chan models.Store)
