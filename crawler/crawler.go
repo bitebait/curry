@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/bitebait/curry/api/db"
 	"github.com/bitebait/curry/api/models"
+	"github.com/bitebait/curry/cache"
 	"github.com/bitebait/curry/crawler/spiders"
 	"github.com/bitebait/curry/scheduler"
 )
@@ -19,15 +19,14 @@ func Init(wg *sync.WaitGroup) {
 		s := scheduler.Init(
 			func() {
 				log.Println("Running crawler...")
-				db.Database.Create(&models.Cache{
+				cache.SetCache(&models.Cache{
 					Stores: *runCrawler(),
 				})
+
 			},
 		)
-
 		<-s.Start()
 	}()
-
 }
 
 func runCrawler() *[]models.Store {

@@ -4,6 +4,7 @@ module github.com/bitebait/curry
 go 1.19
 
 require (
+	github.com/bluele/gcache v0.0.2
 	github.com/gocolly/colly v1.2.0
 	github.com/jasonlvhit/gocron v0.0.1
 	github.com/kkyr/fig v0.3.0
