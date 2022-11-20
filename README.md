@@ -10,6 +10,18 @@ Curry é um WebCrawler escrito em Golang com finalidade de verificar o valor do 
 
 * * *
 
+## :tada: Features
+
+1. :white_check_mark: Web Crawler.
+1. :white_check_mark: API JSON Endpoint.
+1. :white_check_mark: In-Memory Cache.
+1. :white_check_mark: Scheduler.
+1. :white_check_mark: SQLite Database to keep history.
+1. :white_check_mark: Custom settings.
+1. :white_check_mark: Easy to add new spiders.
+
+* * *
+
 ## 📌 Uso
 
 Para utilizar, basta seguir os passos abaixo:
