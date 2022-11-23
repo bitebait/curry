@@ -53,6 +53,8 @@ func (s spider) RunSpider(channel chan models.Store) {
 
 	c.SetRequestTimeout(time.Duration(config.GetConfig.Crawler.ClientTimeout) * time.Second)
 
+	c.Limit(&colly.LimitRule{Parallelism: 6})
+
 	c.OnHTML(s.Selector, func(e *colly.HTMLElement) {
 		store := &models.Store{
 			Name:     s.Name,
