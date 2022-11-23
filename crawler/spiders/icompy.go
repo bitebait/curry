@@ -1,16 +1,9 @@
 package spiders
 
-import (
-	"github.com/gocolly/colly"
-)
-
 func init() {
 	NewSpider(
 		"icompy",
 		"div.pt_menu:nth-child(2) > div:nth-child(1) > a:nth-child(1) > span:nth-child(1)",
 		"http://icompy.com/",
-		func(e *colly.HTMLElement) string {
-			return e.Text
-		},
 	)
 }

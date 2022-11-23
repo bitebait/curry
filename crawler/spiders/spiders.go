@@ -31,12 +31,18 @@ type spider struct {
 	URL      string
 }
 
-func NewSpider(name, selector, url string, getValue func(e *colly.HTMLElement) string) {
+func NewSpider(name, selector, url string, getValue ...func(e *colly.HTMLElement) string) {
 	s := new(spider)
 	s.Name = name
 	s.Selector = selector
 	s.URL = url
-	s.GetValue = getValue
+	if len(getValue) <= 0 {
+		s.GetValue = func(e *colly.HTMLElement) string {
+			return e.Text
+		}
+	} else {
+		s.GetValue = getValue[0]
+	}
 	spiders = append(spiders, s)
 }
 
