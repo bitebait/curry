@@ -111,6 +111,7 @@ currency:
 <br>
 
 1. **[alboradainfo](https://www.alboradainfo.com/)**
+1. **[aromastore](https://www.aromastore.com.br/)**
 1. **[atacadocollections](https://www.atacadocollections.com/)**
 1. **[atacadogames](https://www.atacadogames.com/)**
 1. **[atlanticoshop](https://www.atlanticoshop.com.br/)**
@@ -125,6 +126,7 @@ currency:
 1. **[gabahobby](https://www.gabahobby.com/)**
 1. **[hbgames](http://www.hbgamespy.com/)**
 1. **[icompy](http://icompy.com/)**
+1. **[infinitysport](https://www.infinitysport.com.py/)**
 1. **[lgimportados](https://www.lgimportados.com/)**
 1. **[madridcenter](https://www.madridcenter.com/)**
 1. **[megaeletro](https://www.megaeletro.com.py/br)**
