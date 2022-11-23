@@ -9,7 +9,7 @@ require (
 	github.com/jasonlvhit/gocron v0.0.1
 	github.com/kkyr/fig v0.3.0
 	gorm.io/driver/sqlite v1.4.3
-	gorm.io/gorm v1.24.1
+	gorm.io/gorm v1.24.2
 )
 
 require (
