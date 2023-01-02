@@ -8,7 +8,7 @@ require (
 	github.com/gocolly/colly v1.2.0
 	github.com/jasonlvhit/gocron v0.0.1
 	github.com/kkyr/fig v0.3.0
-	gorm.io/driver/sqlite v1.4.3
+	gorm.io/driver/sqlite v1.4.4
 	gorm.io/gorm v1.24.2
 )
 
