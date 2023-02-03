@@ -7,7 +7,7 @@ require (
 	github.com/bluele/gcache v0.0.2
 	github.com/gocolly/colly v1.2.0
 	github.com/jasonlvhit/gocron v0.0.1
-	github.com/kkyr/fig v0.3.0
+	github.com/kkyr/fig v0.3.1
 	gorm.io/driver/sqlite v1.4.4
 	gorm.io/gorm v1.24.3
 )
@@ -33,4 +33,5 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
