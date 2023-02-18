@@ -114,7 +114,6 @@ currency:
 1. **[aromastore](https://www.aromastore.com.br/)**
 1. **[atacadocollections](https://www.atacadocollections.com/)**
 1. **[atacadogames](https://www.atacadogames.com/)**
-1. **[atlanticoshop](https://www.atlanticoshop.com.br/)**
 1. **[audiumelectronics](https://www.audiumelectronics.com/home)**
 1. **[bonanzacambios](https://bonanzacambios.com.py/)**
 1. **[cambioschaco](https://www.cambioschaco.com.py/pt-br/)**
@@ -122,7 +121,6 @@ currency:
 1. **[cellshop](https://www.cellshop.com/br/)**
 1. **[comprasparaguai](https://www.comprasparaguai.com.br/)**
 1. **[dolarpy](https://www.dolarpy.com.br/)**
-1. **[eleganciacompany](https://www.eleganciacompany.com/)**
 1. **[gabahobby](https://www.gabahobby.com/)**
 1. **[hbgames](http://www.hbgamespy.com/)**
 1. **[icompy](http://icompy.com/)**
