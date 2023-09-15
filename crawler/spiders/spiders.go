@@ -1,17 +1,15 @@
 package spiders
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"time"
 
-	"github.com/gocolly/colly"
-	"github.com/gocolly/colly/extensions"
-
 	"github.com/bitebait/curry/api/models"
 	"github.com/bitebait/curry/config"
 	"github.com/bitebait/curry/helpers"
+	"github.com/gocolly/colly"
+	"github.com/gocolly/colly/extensions"
 )
 
 var spiders []Runnable
@@ -20,8 +18,8 @@ type Runnable interface {
 	RunSpider(channel chan models.Store)
 }
 
-func GetAllSpiders() *[]Runnable {
-	return &spiders
+func GetAllSpiders() []Runnable {
+	return spiders
 }
 
 type spider struct {
@@ -32,10 +30,11 @@ type spider struct {
 }
 
 func NewSpider(name, selector, url string, getValue ...func(e *colly.HTMLElement) string) {
-	s := new(spider)
-	s.Name = name
-	s.Selector = selector
-	s.URL = url
+	s := spider{
+		Name:     name,
+		Selector: selector,
+		URL:      url,
+	}
 	if len(getValue) <= 0 {
 		s.GetValue = func(e *colly.HTMLElement) string {
 			return e.Text
@@ -70,12 +69,6 @@ func (s spider) RunSpider(channel chan models.Store) {
 		}
 		channel <- *store
 	})
-	c.OnResponse(func(r *colly.Response) {
-		fmt.Println("SUCCESS: Visited", r.Request.URL)
-	})
-	c.OnScraped(func(r *colly.Response) {
-		fmt.Println("SUCCESS: Scrap Finished", r.Request.URL)
-	})
 
 	c.OnError(func(r *colly.Response, err error) {
 		log.Printf("FATAL: Something went wrong (%s): %s", r.Request.URL, err)
@@ -87,7 +80,7 @@ func (s spider) RunSpider(channel chan models.Store) {
 
 	err := c.Visit(s.URL)
 	if err != nil {
-		log.Panicf("FATAL: Failed to visit URL: %s\n", s.URL)
+		log.Fatalf("FATAL: Failed to visit URL: %s\n", s.URL)
 	}
 
 	c.Wait()

@@ -31,7 +31,7 @@ func Init(wg *sync.WaitGroup) {
 
 func runCrawler() *[]models.Store {
 	var stores []models.Store
-	var allSpiders = *spiders.GetAllSpiders()
+	var allSpiders = spiders.GetAllSpiders()
 
 	now := time.Now()
 	defer func() {
