@@ -15,21 +15,35 @@ func init() {
 	gc = gcache.New(1).Build()
 }
 
-func SetCache(c *models.Cache) {
-	log.Println("Running crawler...")
-	db.Database.Create(c)
-	db.Database.Preload("Stores",
+// SetCache sets the cache with the provided data
+func SetCache(cacheData *models.Cache) {
+	log.Println("Running cache update process...")
+	err := db.Database.Create(cacheData).Error
+	if err != nil {
+		log.Printf("Failed to create cache: %v\n", err)
+		return
+	}
+
+	err = db.Database.Preload("Stores",
 		func(db *gorm.DB) *gorm.DB {
 			return db.Order("stores.name ASC")
-		}).Last(&c)
+		}).Last(cacheData).Error
+	if err != nil {
+		log.Printf("Failed to load cache: %v\n", err)
+		return
+	}
+
 	gc.Purge()
-	gc.Set("cache", c)
+	gc.Set("cache", cacheData)
 }
 
+// GetCache retrieves the cache from memory
 func GetCache() (interface{}, error) {
 	cache, err := gc.Get("cache")
 	if err != nil {
+		log.Printf("Failed to retrieve cache: %v\n", err)
 		return nil, err
 	}
+
 	return cache, nil
 }

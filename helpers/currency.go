@@ -8,16 +8,19 @@ import (
 	"strings"
 )
 
-func FormatCurrency(s string) string {
+func FormatCurrency(currencyString string) string {
 	reg, err := regexp.Compile(`[^\d_.]`)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
-	cur, err := strconv.ParseFloat(reg.ReplaceAllString(strings.ReplaceAll(strings.TrimSpace(s), ",", "."), ""), 64)
+	cleanedString := strings.TrimSpace(strings.ReplaceAll(currencyString, ",", "."))
+	currencyValue, err := strconv.ParseFloat(reg.ReplaceAllString(cleanedString, ""), 64)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
-	return fmt.Sprintf("%.2f", cur)
+	formattedCurrency := fmt.Sprintf("%.2f", currencyValue)
+
+	return formattedCurrency
 }

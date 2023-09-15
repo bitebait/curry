@@ -11,7 +11,7 @@ func Init(f func()) *gocron.Scheduler {
 	s := gocron.NewScheduler()
 	err := s.Every(uint64(config.GetConfig.Cache.MaxAge)).From(gocron.NextTick()).Hours().Do(f)
 	if err != nil {
-		log.Panic("Failed to init scheduler.")
+		log.Fatal("Failed to initialize scheduler:", err)
 	}
 	return s
 }
