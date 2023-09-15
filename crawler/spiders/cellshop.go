@@ -1,18 +1,9 @@
 package spiders
 
-import (
-	"strings"
-
-	"github.com/gocolly/colly"
-)
-
 func init() {
 	NewSpider(
 		"cellshop",
-		".showCur",
+		"div.currency-exchange-rates > span.rate",
 		"https://www.cellshop.com/br/",
-		func(e *colly.HTMLElement) string {
-			return strings.Split(e.Text, "Câmbio")[1]
-		},
 	)
 }
