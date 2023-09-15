@@ -3,7 +3,6 @@ package crawler
 import (
 	"log"
 	"sync"
-	"time"
 
 	"github.com/bitebait/curry/api/models"
 	"github.com/bitebait/curry/cache"
@@ -16,30 +15,16 @@ func Init(wg *sync.WaitGroup) {
 	go func() {
 		defer wg.Done()
 
-		s := scheduler.Init(
-			func() {
-				log.Println("Running crawler...")
-				cache.SetCache(&models.Cache{
-					Stores: *runCrawler(),
-				})
-
-			},
-		)
+		s := scheduler.Init(runCrawler)
 		<-s.Start()
 	}()
 }
 
-func runCrawler() *[]models.Store {
+func runCrawler() {
+	allSpiders := spiders.GetAllSpiders()
 	var stores []models.Store
-	var allSpiders = spiders.GetAllSpiders()
-
-	now := time.Now()
-	defer func() {
-		log.Printf("CRAWLER function took %s.", time.Since(now))
-	}()
-
-	wg := sync.WaitGroup{}
-	channel := make(chan models.Store)
+	var wg sync.WaitGroup
+	channel := make(chan models.Store, len(allSpiders))
 
 	for _, spider := range allSpiders {
 		wg.Add(1)
@@ -54,11 +39,13 @@ func runCrawler() *[]models.Store {
 		close(channel)
 	}()
 
-	for i := range channel {
-		stores = append(stores, i)
+	for store := range channel {
+		stores = append(stores, store)
 	}
 
-	log.Printf("FINISHED: %v of %v urls visited.", len(stores), len(allSpiders))
+	cache.SetCache(&models.Cache{
+		Stores: stores,
+	})
 
-	return &stores
+	log.Printf("FINISHED: %v of %v urls visited.", len(stores), len(allSpiders))
 }
