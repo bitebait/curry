@@ -7,7 +7,7 @@ require (
 	github.com/gocolly/colly v1.2.0
 	github.com/jasonlvhit/gocron v0.0.1
 	github.com/kkyr/fig v0.4.0
-	gorm.io/gorm v1.25.5
+	gorm.io/gorm v1.25.7
 )
 
 require (
