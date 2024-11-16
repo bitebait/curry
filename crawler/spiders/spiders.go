@@ -12,16 +12,20 @@ import (
 	"github.com/gocolly/colly/extensions"
 )
 
+// Global variable to store a list of Runnable spiders
 var spiderRunners []Runnable
 
+// Runnable interface
 type Runnable interface {
 	RunSpider(channel chan models.Store)
 }
 
+// Function to retrieve all spiders
 func GetAllSpiders() []Runnable {
 	return spiderRunners
 }
 
+// Spider struct definition
 type Spider struct {
 	Name     string
 	Selector string
@@ -29,6 +33,7 @@ type Spider struct {
 	URL      string
 }
 
+// Function to create a new spider
 func NewSpider(name, selector, url string, getValue ...func(e *colly.HTMLElement) string) {
 	s := Spider{
 		Name:     name,
@@ -40,13 +45,16 @@ func NewSpider(name, selector, url string, getValue ...func(e *colly.HTMLElement
 	} else {
 		s.GetValue = getValue[0]
 	}
+
 	spiderRunners = append(spiderRunners, s)
 }
 
+// Default function to get value from HTML element
 func defaultGetValue(e *colly.HTMLElement) string {
 	return e.Text
 }
 
+// Function to run the spider
 func (s Spider) RunSpider(channel chan models.Store) {
 	c := createCollector()
 	configureCollector(s, c, channel)
@@ -59,8 +67,12 @@ func (s Spider) RunSpider(channel chan models.Store) {
 	c.Wait()
 }
 
+// Function to create a new collector with necessary configurations
 func createCollector() *colly.Collector {
-	collector := colly.NewCollector(colly.Async(true))
+	collector := colly.NewCollector(
+		colly.Async(true),
+		colly.MaxDepth(1),
+	)
 	extensions.RandomUserAgent(collector)
 	extensions.Referer(collector)
 	collector.WithTransport(&http.Transport{
@@ -72,12 +84,25 @@ func createCollector() *colly.Collector {
 	return collector
 }
 
+// Global map to track seen URLs
+var seenURLs = make(map[string]bool)
+
+// Function to configure the collector with necessary callbacks
 func configureCollector(s Spider, c *colly.Collector, channel chan models.Store) {
 	c.OnHTML(s.Selector, func(e *colly.HTMLElement) {
+		value := s.GetValue(e)
+
+		// Check for duplicate URLs before sending to channel
+		if seenURLs[s.URL] {
+			return
+		}
+
+		seenURLs[s.URL] = true
+
 		store := &models.Store{
 			Name:     s.Name,
 			Currency: config.GetConfig.Currency.Currency,
-			Value:    helpers.FormatCurrency(s.GetValue(e)),
+			Value:    helpers.FormatCurrency(value),
 			URL:      s.URL,
 		}
 		channel <- *store
