@@ -113,11 +113,11 @@ currency:
 1. **[alboradainfo](https://www.alboradainfo.com/)**
 1. **[aromastore](https://www.aromastore.com.br/)**
 1. **[atacadocollections](https://www.atacadocollections.com/)**
-1. **[atacadogames](https://www.atacadogames.com/)**
+1. **[atacadoconnect](https://atacadoconnect.com/)**
 1. **[audiumelectronics](https://www.audiumelectronics.com/home)**
 1. **[bonanzacambios](https://bonanzacambios.com.py/)**
 1. **[cambioschaco](https://www.cambioschaco.com.py/pt-br/)**
-1. **[casaamericana](https://www.casaamericana.com.py/)**
+1. **[digitalcenterpy](https://digitalcenterpy.com/)**
 1. **[cellshop](https://www.cellshop.com/br/)**
 1. **[comprasparaguai](https://www.comprasparaguai.com.br/)**
 1. **[dolarpy](https://www.dolarpy.com.br/)**
