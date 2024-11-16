@@ -62,18 +62,15 @@ Caso tenha alterado o endpoint favor verifique o log de saida do terminal ou o a
 
 ```json
 {
-  "id": 1,
   "createdAt": "2021-11-27T15:21:06.343499301-03:00",
   "items": [
     {
-      "id": 1,
       "name": "example_store1",
       "currency": "BRL",
       "value": "5.7",
       "url": "https://www.example_store1.com/"
     },
     {
-      "id": 2,
       "name": "example_store2",
       "currency": "BRL",
       "value": "5.72",
