@@ -1,6 +1,8 @@
 module github.com/bitebait/curry
 
-go 1.20
+go 1.21
+
+toolchain go1.23.2
 
 require (
 	github.com/bluele/gcache v0.0.2

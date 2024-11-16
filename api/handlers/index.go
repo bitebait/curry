@@ -8,14 +8,19 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	status := http.StatusOK
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(status)
+	const contentType = "application/json"
+	setResponseHeaders(w, contentType)
 
 	result, err := cache.GetCache()
 	if err != nil {
-		status = http.StatusNotFound
+		http.Error(w, "Cache not found", http.StatusNotFound)
+		return
 	}
 
 	json.NewEncoder(w).Encode(result)
+}
+
+func setResponseHeaders(w http.ResponseWriter, contentType string) {
+	w.Header().Set("Content-Type", contentType)
+	w.WriteHeader(http.StatusOK)
 }

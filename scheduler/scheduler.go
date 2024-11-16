@@ -7,11 +7,13 @@ import (
 	"github.com/jasonlvhit/gocron"
 )
 
-func Init(f func()) *gocron.Scheduler {
-	s := gocron.NewScheduler()
-	err := s.Every(uint64(config.GetConfig.Cache.MaxAge)).From(gocron.NextTick()).Hours().Do(f)
+func Init(jobFunction func()) *gocron.Scheduler {
+	scheduler := gocron.NewScheduler()
+	maxAgeHours := uint64(config.GetConfig.Cache.MaxAge)
+
+	err := scheduler.Every(maxAgeHours).From(gocron.NextTick()).Hours().Do(jobFunction)
 	if err != nil {
 		log.Fatal("Failed to initialize scheduler:", err)
 	}
-	return s
+	return scheduler
 }

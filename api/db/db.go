@@ -11,13 +11,18 @@ var Database *gorm.DB
 var err error
 
 func Init(dataSourceName string) {
-	Database, err = gorm.Open(sqlite.Open(dataSourceName), &gorm.Config{})
+	sqliteDialector := sqlite.Open(dataSourceName)
+	Database, err = gorm.Open(sqliteDialector, &gorm.Config{})
 	if err != nil {
-		panic("Failed to connect database")
+		panic("Failed to connect to the database: " + err.Error())
 	}
 
-	err := Database.AutoMigrate(&models.Cache{}, &models.Store{})
+	migrateDatabase()
+}
+
+func migrateDatabase() {
+	err = Database.AutoMigrate(&models.Cache{}, &models.Store{})
 	if err != nil {
-		panic("Failed to migrate database")
+		panic("Failed to migrate database: " + err.Error())
 	}
 }

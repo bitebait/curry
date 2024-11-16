@@ -12,17 +12,17 @@ import (
 	"github.com/gocolly/colly/extensions"
 )
 
-var spiders []Runnable
+var spiderRunners []Runnable
 
 type Runnable interface {
 	RunSpider(channel chan models.Store)
 }
 
 func GetAllSpiders() []Runnable {
-	return spiders
+	return spiderRunners
 }
 
-type spider struct {
+type Spider struct {
 	Name     string
 	Selector string
 	GetValue func(e *colly.HTMLElement) string
@@ -30,36 +30,49 @@ type spider struct {
 }
 
 func NewSpider(name, selector, url string, getValue ...func(e *colly.HTMLElement) string) {
-	s := spider{
+	s := Spider{
 		Name:     name,
 		Selector: selector,
 		URL:      url,
 	}
-	if len(getValue) <= 0 {
-		s.GetValue = func(e *colly.HTMLElement) string {
-			return e.Text
-		}
+	if len(getValue) == 0 {
+		s.GetValue = defaultGetValue
 	} else {
 		s.GetValue = getValue[0]
 	}
-	spiders = append(spiders, s)
+	spiderRunners = append(spiderRunners, s)
 }
 
-func (s spider) RunSpider(channel chan models.Store) {
-	c := colly.NewCollector(colly.Async(true))
+func defaultGetValue(e *colly.HTMLElement) string {
+	return e.Text
+}
 
-	extensions.RandomUserAgent(c)
-	extensions.Referer(c)
+func (s Spider) RunSpider(channel chan models.Store) {
+	c := createCollector()
+	configureCollector(s, c, channel)
 
-	c.WithTransport(&http.Transport{
+	err := c.Visit(s.URL)
+	if err != nil {
+		log.Fatalf("FATAL: Failed to visit URL: %s\n", s.URL)
+	}
+
+	c.Wait()
+}
+
+func createCollector() *colly.Collector {
+	collector := colly.NewCollector(colly.Async(true))
+	extensions.RandomUserAgent(collector)
+	extensions.Referer(collector)
+	collector.WithTransport(&http.Transport{
 		DisableKeepAlives:     true,
 		ResponseHeaderTimeout: time.Duration(config.GetConfig.Crawler.ResponseHeaderTimeout) * time.Second,
 	})
+	collector.SetRequestTimeout(time.Duration(config.GetConfig.Crawler.ClientTimeout) * time.Second)
+	collector.Limit(&colly.LimitRule{Parallelism: 6})
+	return collector
+}
 
-	c.SetRequestTimeout(time.Duration(config.GetConfig.Crawler.ClientTimeout) * time.Second)
-
-	c.Limit(&colly.LimitRule{Parallelism: 6})
-
+func configureCollector(s Spider, c *colly.Collector, channel chan models.Store) {
 	c.OnHTML(s.Selector, func(e *colly.HTMLElement) {
 		store := &models.Store{
 			Name:     s.Name,
@@ -77,11 +90,4 @@ func (s spider) RunSpider(channel chan models.Store) {
 	c.OnRequest(func(r *colly.Request) {
 		log.Println("INFO: Visiting", r.URL)
 	})
-
-	err := c.Visit(s.URL)
-	if err != nil {
-		log.Fatalf("FATAL: Failed to visit URL: %s\n", s.URL)
-	}
-
-	c.Wait()
 }

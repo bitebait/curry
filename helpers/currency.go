@@ -8,19 +8,21 @@ import (
 	"strings"
 )
 
+var nonDigitRegex = regexp.MustCompile(`[^\d_.]`)
+
 func FormatCurrency(currencyString string) string {
-	reg, err := regexp.Compile(`[^\d_.]`)
+	cleanedCurrency := cleanCurrencyString(currencyString)
+	currencyValue, err := strconv.ParseFloat(cleanedCurrency, 64)
 	if err != nil {
 		log.Println(err)
+		return ""
 	}
 
-	cleanedString := strings.TrimSpace(strings.ReplaceAll(currencyString, ",", "."))
-	currencyValue, err := strconv.ParseFloat(reg.ReplaceAllString(cleanedString, ""), 64)
-	if err != nil {
-		log.Println(err)
-	}
+	currencyFormatted := fmt.Sprintf("%.2f", currencyValue)
+	return currencyFormatted
+}
 
-	formattedCurrency := fmt.Sprintf("%.2f", currencyValue)
-
-	return formattedCurrency
+func cleanCurrencyString(currencyString string) string {
+	cleaned := strings.TrimSpace(strings.ReplaceAll(currencyString, ",", "."))
+	return nonDigitRegex.ReplaceAllString(cleaned, "")
 }
