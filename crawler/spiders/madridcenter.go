@@ -1,9 +1,17 @@
 package spiders
 
+import (
+	"github.com/gocolly/colly"
+	"strings"
+)
+
 func init() {
 	NewSpider(
 		"madridcenter",
-		"body > header > div > div > div > div.item.top-quotes > div.col-12.text3 > span > span:nth-child(1) > strong",
+		"div.col-lg-4:nth-child(1) > div:nth-child(1) > div:nth-child(1)",
 		"https://www.madridcenter.com/",
+		func(e *colly.HTMLElement) string {
+			return strings.Split(e.Text, " ")[3]
+		},
 	)
 }

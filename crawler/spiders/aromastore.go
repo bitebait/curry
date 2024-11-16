@@ -9,10 +9,10 @@ import (
 func init() {
 	NewSpider(
 		"aromastore",
-		".topbar > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)",
-		"https://www.aromastore.com.br/",
+		"div.quotation",
+		"https://www.aromastore.com.py",
 		func(e *colly.HTMLElement) string {
-			return strings.Split(e.Text, "R$")[1]
+			return strings.Split(e.Text, "x")[1]
 		},
 	)
 }

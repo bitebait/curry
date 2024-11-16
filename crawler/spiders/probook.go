@@ -1,9 +1,17 @@
 package spiders
 
+import (
+	"github.com/gocolly/colly"
+	"strings"
+)
+
 func init() {
 	NewSpider(
 		"probook",
-		".quotation > span:nth-child(1) > strong:nth-child(1)",
+		".text-header-foreground",
 		"https://www.probook.com.py/",
+		func(e *colly.HTMLElement) string {
+			return strings.Split(e.Text, "x")[1]
+		},
 	)
 }
