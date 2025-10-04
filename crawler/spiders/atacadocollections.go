@@ -3,7 +3,7 @@ package spiders
 func init() {
 	NewSpider(
 		"atacadocollections",
-		"div.currency-results > span.text",
+		"#header > div.header-extras > div > ul:nth-child(1) > li:nth-child(1) > span",
 		"https://www.atacadocollections.com/",
 	)
 }
