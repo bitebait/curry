@@ -5,11 +5,12 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/gocolly/colly"
+	"github.com/gocolly/colly/extensions"
+
 	"github.com/bitebait/curry/api/models"
 	"github.com/bitebait/curry/config"
 	"github.com/bitebait/curry/helpers"
-	"github.com/gocolly/colly"
-	"github.com/gocolly/colly/extensions"
 )
 
 // Global variable to store a list of Runnable spiders
