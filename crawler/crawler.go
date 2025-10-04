@@ -1,12 +1,13 @@
 package crawler
 
 import (
+	"log"
+	"sync"
+
 	"github.com/bitebait/curry/api/models"
 	"github.com/bitebait/curry/cache"
 	"github.com/bitebait/curry/crawler/spiders"
 	"github.com/bitebait/curry/scheduler"
-	"log"
-	"sync"
 )
 
 func Init(wg *sync.WaitGroup) {
