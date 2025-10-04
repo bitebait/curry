@@ -120,11 +120,9 @@ currency:
 1. **[icompy](http://icompy.com/)**
 1. **[infinitysport](https://www.infinitysport.com.py/)**
 1. **[lgimportados](https://www.lgimportados.com/)**
-1. **[madridcenter](https://www.madridcenter.com/)**
 1. **[mercosurcambios](https://site.mercosurcambios.com/)**
 1. **[mundodocelular](https://www.mundodocelular.com/)**
 1. **[oneclick](https://oneclick.com.py/)**
-1. **[pioneerinter](https://www.pioneerinter.com/)**
 1. **[probook](https://www.probook.com.py/)**
 1. **[shoppingcentropioneer](https://shoppingcentropioneer.com/)**
 1. **[tcheloco](https://www.tcheloco.com.py/br/)**
